@@ -1,13 +1,14 @@
 import supertest from 'supertest';
-import app from '../../src/server';
+import app from '../server'
 
 const request = supertest(app);
+const data  = {
+    message: 'hello'
+}
 
 describe('Chat System with Chat GPT', () => {
   it('should return a message', async (done) => {
-    const response = await request
-    .post('/api/chat')
-    .send('hello');
+    const response = await request.post('/api/chat').send(data);
     expect(response.status).toBe(200);
   });
 });

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { chat } from './v1';
+import chat from './v1/chats';
 
 const routes: Router = Router();
 routes.use('/chat', chat);

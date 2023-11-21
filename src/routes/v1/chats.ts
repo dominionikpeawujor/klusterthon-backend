@@ -1,9 +1,9 @@
-import { Router } from "express";
-import { GptHandler } from "../../handlers/chat"; 
+import { Router } from 'express';
+import { GptHandler } from '../../handlers/chat';
 
-const chatRouter = Router();
-const GptMethods = new GptHandler()
+const chat = Router();
+const GptMethods = new GptHandler();
 
-chatRouter.post('/', GptMethods.chat);
+chat.post('/', GptMethods.chat);
 
-export default chatRouter;
+export default chat;

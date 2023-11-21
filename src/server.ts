@@ -22,5 +22,4 @@ app.listen(PORT, () => {
   console.log(`Server connected at Port: ${PORT}`);
 });
 
-
 export default app;

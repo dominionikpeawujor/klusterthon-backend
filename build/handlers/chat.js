@@ -6,12 +6,14 @@ const chatService = new services_1.GptService();
 class GptHandler {
     async chat(req, res) {
         try {
-            const data = req.body;
+            const data = req.body.message;
+            console.log(data);
             const response = await chatService.chat(data);
             return res.status(200).json({ message: 'success', data: response });
         }
         catch (error) {
-            new Error(`Error at GPTHandler: ${error}`);
+            console.error(`Error at GPTHandler: ${error}`);
+            return res.status(500).json({ message: 'error', error: (error.message) });
         }
     }
 }

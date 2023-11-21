@@ -12,12 +12,11 @@ const openai = new OpenAI({ apiKey: secret });
  */
 
 export default class Gpt {
-  async chat(data: string): Promise<string> {
+  async chat(data: string) {
     const completion = await openai.chat.completions.create({
       messages: [{ role: 'user', content: data }],
       model: 'gpt-3.5-turbo',
     });
-
-    return completion.choices[0].message['content'] as string;
+    return (completion.choices[0]);
   }
 }

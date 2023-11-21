@@ -1,7 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const v1_1 = require("./v1");
+const chats_1 = __importDefault(require("./v1/chats"));
 const routes = (0, express_1.Router)();
-routes.use('/chat', v1_1.chat);
+routes.use('/chat', chats_1.default);
 exports.default = routes;

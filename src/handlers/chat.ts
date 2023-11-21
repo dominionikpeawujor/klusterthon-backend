@@ -6,12 +6,12 @@ const chatService = new GptService();
 export class GptHandler {
   async chat(req: Request, res: Response) {
     try {
-      const data: string = req.body;
+      const data: string = req.body.message;
       const response = await chatService.chat(data);
       return res.status(200).json({ message: 'success', data: response });
     } catch (error) {
-      new Error(`Error at GPTHandler: ${error}`);
+      console.error(`Error at GPTHandler: ${error}`);
+      return res.status(500).json({ message: 'error', error: ((error as unknown as Error).message ) });
     }
   }
-
 }
