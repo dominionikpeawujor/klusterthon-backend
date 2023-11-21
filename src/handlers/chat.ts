@@ -13,4 +13,5 @@ export class GptHandler {
       new Error(`Error at GPTHandler: ${error}`);
     }
   }
+
 }
