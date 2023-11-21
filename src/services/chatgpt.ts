@@ -3,10 +3,14 @@ import { config } from 'dotenv';
 
 config();
 
+// Initial config for chatGPT
 const secret: string = process.env.secret as unknown as string;
 const openai = new OpenAI({ apiKey: secret });
 
-export async function main(): Promise<string> {
+/* The function that connects chatgpt operations and 
+ * handles the response to be sent back to the user.
+ */
+export default async function gpt(): Promise<string> {
   const completion = await openai.chat.completions.create({
     messages: [
       { role: 'user', content: 'Great job!' },
@@ -16,7 +20,3 @@ export async function main(): Promise<string> {
 
   return (completion.choices[0].message['content']) as string;
 }
-main();
-
-// { role: 'system', content: 'You are a helpful assistant.' },
-//       { role: 'user', content: 'Who won the world series in 2020?' },

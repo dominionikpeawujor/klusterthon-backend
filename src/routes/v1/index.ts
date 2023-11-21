@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { main } from "../../services/chatgpt"; 
+import { gpt } from "../../services"; 
 
 const v1_routes: Router = Router();
 
 v1_routes.get('/', (req,res) => {
-    main()
+    gpt()
 })
 export default v1_routes;
