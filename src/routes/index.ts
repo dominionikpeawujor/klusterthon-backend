@@ -1,7 +1,7 @@
-import { Router,  } from "express";
-import version1 from './v1';
+import { Router } from 'express';
+import { chat } from './v1';
 
 const routes: Router = Router();
-routes.use('/v1', version1 );
+routes.use('/chat', chat);
 
 export default routes;

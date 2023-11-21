@@ -1,1 +1,1 @@
-export { default as gpt } from './chatgpt';
+export { default as GptService } from './chatgpt';
