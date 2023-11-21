@@ -4,7 +4,7 @@ import { config } from 'dotenv';
 config();
 
 // Initial config for chatGPT
-const secret: string = process.env.secret as unknown as string;
+const secret: string = process.env.API_KEY as unknown as string;
 const openai = new OpenAI({ apiKey: secret });
 
 /* The function that connects chatgpt operations and 
