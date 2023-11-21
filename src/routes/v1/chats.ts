@@ -4,6 +4,6 @@ import { GptHandler } from "../../handlers/chat";
 const chatRouter = Router();
 const GptMethods = new GptHandler()
 
-chatRouter.get('/', GptMethods.chat);
+chatRouter.post('/', GptMethods.chat);
 
 export default chatRouter;
