@@ -10,7 +10,7 @@ const PORT: number | unknown = process.env.PORT || 3000;
 app.use((req,_,next) => {
     // req.headers['custom-header'] = process.env.secret;
     next();
-})
+});
 app.use('/api', routes );
 
 app.listen(PORT, () => {

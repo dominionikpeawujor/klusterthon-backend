@@ -6,15 +6,15 @@ config();
 const secret: string = process.env.secret as unknown as string;
 const openai = new OpenAI({ apiKey: secret });
 
-export async function main() {
+export async function main(): Promise<string> {
   const completion = await openai.chat.completions.create({
     messages: [
-      { role: 'user', content: 'hello chatgpt' },
+      { role: 'user', content: 'Great job!' },
     ],
     model: 'gpt-3.5-turbo',
   });
 
-  console.log('testststs', completion.choices[0]);
+  return (completion.choices[0].message['content']) as string;
 }
 main();
 
