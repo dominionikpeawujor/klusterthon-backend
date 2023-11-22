@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { GptHandler } from '../../handlers/chat';
+import { GptHandler } from '../../handlers/gpt';
 
 const chat = Router();
 const GptMethods = new GptHandler();
