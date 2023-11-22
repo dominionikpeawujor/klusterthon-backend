@@ -1,10 +1,10 @@
 import supertest from 'supertest';
-import app from '../server'
+import app from '../server';
 
 const request = supertest(app);
-const data  = {
-    message: 'hello'
-}
+const data = {
+  message: 'hello',
+};
 
 describe('Chat System with Chat GPT', () => {
   it('should return a message', async () => {

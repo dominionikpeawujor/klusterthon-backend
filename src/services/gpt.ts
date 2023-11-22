@@ -17,6 +17,6 @@ export default class Gpt {
       messages: [{ role: 'user', content: data }],
       model: 'gpt-3.5-turbo',
     });
-    return (completion.choices[0]);
+    return completion.choices[0];
   }
 }
