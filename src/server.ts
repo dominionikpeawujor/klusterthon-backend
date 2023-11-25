@@ -10,7 +10,7 @@ const app: Application = express();
 const PORT: number | unknown = process.env.PORT || 3000;
 
 const corsOptions = {
-  origin: `http://localhost:${PORT}`,
+  origin: `*`,
   optionSuccessStatus: 200,
 };
 
