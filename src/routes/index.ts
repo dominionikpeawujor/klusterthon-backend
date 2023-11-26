@@ -1,8 +1,10 @@
 import { Request, Response ,Router } from 'express';
-import chat from './v1/gpt';
+import gpt from './v1/gpt';
+import lg from './v1/langchain'
 
 const routes: Router = Router();
-routes.use('/diagnose', chat);
+routes.use('/diagnose', gpt);
+routes.use('/langchain', lg);
 
 routes.get('/', (_req: Request, res: Response) => {
   res.send('Welcome!');
